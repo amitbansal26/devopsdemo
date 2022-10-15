@@ -8,7 +8,6 @@ COPY mvnw pom.xml ./
 COPY ./src ./src
 USER root
 RUN chmod 755 mvnw
-USER root
 RUN ./mvnw clean install
 
 
