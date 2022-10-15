@@ -10,7 +10,7 @@ pipeline {
       }
   }
   steps{
-     sh 'docker  build -t spring-boot-docker .'
+     sh 'docker  build -t demo-devops-docker .'
   }
 
   }
