@@ -1,12 +1,11 @@
 FROM eclipse-temurin:17-jdk-jammy as builder
-RUN addgroup demogroup; adduser  --ingroup demogroup --disabled-password demo
-USER demo
+#RUN addgroup demogroup; adduser  --ingroup demogroup --disabled-password demo
+USER root
 WORKDIR /opt/app
 COPY .mvn/ .mvn
 COPY mvnw pom.xml ./
-#RUN ./mvnw -Dmaven.wagon.http.ssl.allowall=true dependency:go-offline
+RUN ./mvnw -Dmaven.wagon.http.ssl.allowall=true dependency:go-offline
 COPY ./src ./src
-USER root
 RUN chmod 755 mvnw
 RUN ./mvnw clean install
 
