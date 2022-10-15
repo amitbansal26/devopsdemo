@@ -4,7 +4,7 @@ USER demo
 WORKDIR /opt/app
 COPY .mvn/ .mvn
 COPY mvnw pom.xml ./
-RUN ./mvnw -Dmaven.wagon.http.ssl.allowall=true dependency:go-offline
+#RUN ./mvnw -Dmaven.wagon.http.ssl.allowall=true dependency:go-offline
 COPY ./src ./src
 RUN ./mvnw clean install
 
