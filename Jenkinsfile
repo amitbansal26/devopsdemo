@@ -2,13 +2,7 @@ pipeline {
   agent any
   stages{
 
-   stage('Change ownership'){
-    agent any
-    steps {
-     sh 'sudo chmod 777 /var/run/docker.sock'
-    }
 
-    }
   stage('Docker build'){
   agent {
       docker {
