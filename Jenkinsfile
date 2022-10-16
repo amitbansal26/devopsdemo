@@ -2,7 +2,13 @@ pipeline {
   agent any
   stages{
 
+stage('Temp stage'){
+ agent any
+ steps{
+ sh 'whoami'
+ }
 
+}
   stage('Docker build'){
   agent {
       docker {
@@ -11,7 +17,7 @@ pipeline {
       }
   }
   steps{
-    sh 'whoami'
+
      sh 'docker  build -t demo-devops-docker .'
   }
 
