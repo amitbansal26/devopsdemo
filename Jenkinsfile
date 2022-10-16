@@ -11,6 +11,7 @@ pipeline {
       }
   }
   steps{
+    sh 'whoami'
      sh 'docker  build -t demo-devops-docker .'
   }
 
