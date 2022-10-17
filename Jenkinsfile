@@ -1,5 +1,6 @@
 pipeline {
   agent any
+
   triggers {
       GenericTrigger(
        genericVariables: [
@@ -14,12 +15,7 @@ pipeline {
       )
     }
   stages{
-      stage('Temp stage'){
-        agent any
-        steps{
-        sh 'whoami'
-        }
-     }
+
   stage('Docker build'){
   agent {
       docker {
@@ -31,6 +27,13 @@ pipeline {
   steps{
      sh 'docker  build -t demo-devops-docker .'
   }
+  }
+
+  stage('SonarQube Scan'){
+  }
+  stage ('Push image into nexus'){
+  }
+  stage('Deploy Image to Kubernetes Cluster'){
   }
  }
 }
