@@ -20,6 +20,7 @@ pipeline {
         sh 'whoami'
         }
      }
+
   stage('Docker build'){
   agent {
       docker {
