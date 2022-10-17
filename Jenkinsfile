@@ -28,7 +28,6 @@ pipeline {
      sh 'docker  build -t demo-devops-docker .'
   }
   }
-
   stage('SonarQube Scan'){
   }
   stage ('Push image into nexus'){
