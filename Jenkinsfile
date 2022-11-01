@@ -1,5 +1,5 @@
 pipeline {
-  agent any
+  agent {label 'docker'}
 
   triggers {
       GenericTrigger(
@@ -17,12 +17,7 @@ pipeline {
   stages{
 
   stage('Docker build'){
-  agent {
-      docker {
-      image 'docker'
-      args '-v //var/run/docker.sock:/var/run/docker.sock'
-      }
-  }
+ agent {label 'docker'}
 
   steps{
      sh 'docker  build -t demo-devops-docker .'
