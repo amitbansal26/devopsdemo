@@ -17,7 +17,7 @@ pipeline {
   stages{
 
   stage('Docker build'){
- agent {label 'docker'}
+ agent {label 'jenkins-docker-slave'}
 
   steps{
      sh 'docker  build -t demo-devops-docker .'
