@@ -1,5 +1,5 @@
 pipeline {
-  agent {label 'docker'}
+  agent {label 'jenkins-docker-slave'}
 
   triggers {
       GenericTrigger(
