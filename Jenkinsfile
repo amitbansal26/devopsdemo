@@ -20,7 +20,7 @@ pipeline {
  agent {label 'spring'}
 
   steps{
-     sh 'docker  build -t demo-devops-docker .'
+     sh 'docker -H 0.0.0.0:4243 build -t demo-devops-docker .'
   }
   }
 
