@@ -15,10 +15,7 @@ pipeline {
       )
     }
   stages{
-
   stage('Docker build'){
- agent {label 'spring'}
-
   steps{
      sh 'docker -H 0.0.0.0:4243 build -t demo-devops-docker .'
   }
