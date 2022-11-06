@@ -1,5 +1,5 @@
 pipeline {
-  agent {label 'jenkins-docker-slave'}
+  agent {label 'spring'}
 
   triggers {
       GenericTrigger(
@@ -17,7 +17,7 @@ pipeline {
   stages{
 
   stage('Docker build'){
- agent {label 'jenkins-docker-slave'}
+ agent {label 'spring'}
 
   steps{
      sh 'docker  build -t demo-devops-docker .'
